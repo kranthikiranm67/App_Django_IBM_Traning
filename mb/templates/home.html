@@ -1,0 +1,6 @@
+<h1>This is a Message Board</h1>
+<ul>
+    {% for post in all_post_items %}
+    <li> {{post.text}} </li>
+    {% endfor %}
+</ul>

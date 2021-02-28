@@ -1,0 +1,33 @@
+{% load static %}
+{% if user.is_authenticated %}
+<p> Hello, {{user.username}} </p>
+<p><a href="{% url 'logout' %}">Log Out</a> </p>
+{%endif%}
+<html>
+
+<head>
+    <title>This is Blog</title>
+    <link rel="stylesheet" href="{% static 'css/base.html' %}">
+</head>
+
+
+
+<body>
+    <header>
+        <div class="nav-left">
+            <h1><a href="{% url 'home' %}">All Posts Here</a></h1>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'new_post' %}"> + Post New</a>
+        </div>
+
+    </header>
+
+    <div>
+        {% block content %}
+
+        {% endblock content%}
+    </div>
+</body>
+
+</html>
